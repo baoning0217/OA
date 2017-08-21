@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.siqian.oa.domain">
+	<class name="User" table="OA_User">
+		<id name="id" >
+			<generator class="native"/>
+		</id>
+		<property name="loginName"/>
+		<property name="password"/>
+		<property name="name"/>	
+		<property name="gender"/>
+		<property name="phoneNumber"/>
+		<property name="email"/>
+		<property name="description"/>
+		
+		<!-- department属性，本类与Department的 	多对一 -->
+		<many-to-one name="department" class="Department" column="departmentId" ></many-to-one>
+		
+		<!-- roles属性，本类与Role的 	多对多 -->
+		<set name="roles" table="oa_user_role">
+			<key column="userId"></key>
+			<many-to-many class="Role" column="roleId"></many-to-many>
+		</set>		
+	</class>
+</hibernate-mapping>

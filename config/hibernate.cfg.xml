@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+<session-factory>
+	<property name="dialect">
+		org.hibernate.dialect.MySQL5InnoDBDialect
+	</property>
+
+	<!-- 配置数据库连接信息 
+		<property name="connection.driver_class">com.jdbc.mysql.Driver</property>
+		<property name="connection.url">jdbc:mysql:///oa</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">123456</property>
+	-->
+
+	<!-- 其他配置 -->
+	<property name="show_sql">true</property>
+	<property name="hbm2ddl.auto">update</property>
+
+	<!-- 导入映射文件 
+		<mapping resource="cn/User.nbm.xml" />
+	-->
+	<mapping resource="com/siqian/oa/domain/User.hbm.xml" />
+	<mapping resource="com/siqian/oa/domain/Role.hbm.xml" />
+	<mapping resource="com/siqian/oa/domain/Department.hbm.xml" />
+	<mapping resource="com/siqian/oa/domain/Privilege.hbm.xml" />
+
+
+</session-factory>
+</hibernate-configuration>
