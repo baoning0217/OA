@@ -17,7 +17,6 @@ public class Privilege {
 		
 	}
 	
-	
 	public Privilege(String name,String url,  Privilege parent) {
 		super();
 		this.url = url;
@@ -62,8 +61,6 @@ public class Privilege {
 	public void setchildren(Set<Privilege> children) {
 		this.children = children;
 	}
-	
-	
 	
 	
 

@@ -18,7 +18,7 @@
 		</set>
 		
 		<!-- privilege属性，本类 与Privilege的对对多-->
-		<set name="privileges" table="oa_role_privilege">
+		<set name="privileges" table="oa_role_privilege" lazy="false">
 			<key column="roleId"></key>
 			<many-to-many class="Privilege" column="privilegeId"></many-to-many>
 		</set>

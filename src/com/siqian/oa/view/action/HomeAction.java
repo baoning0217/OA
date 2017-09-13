@@ -26,7 +26,6 @@ public class HomeAction extends ActionSupport{
 		
 	}
 	
-	
 	public String left() throws Exception{
 		return "left";
 		
